@@ -1,0 +1,3 @@
+Gave up on this because the performance was inferior to the static file server built into express.
+Eventually I may try to implement it in C, but in the mean time, I recommend using nginx to serve
+static assets needed by a Node.js application.
