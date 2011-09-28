@@ -1,0 +1,24 @@
+<% if (latest_posts && latest_posts[0]) { %>
+<div> 
+	<h2><a href="<%= latest_posts[0].uri %>"><%= latest_posts[0].title %></a></h2> 
+    <div class="description"> 
+        Posted <%= (new Date(latest_posts[0].posted)).toLocaleDateString() %>
+    </div>
+    <%- latest_posts[0].excerpt %>
+    <h3 style="text-align: right;">
+        <a href="<%= latest_posts[0].uri %>">Read the rest of the article</a>
+    </h3> 
+</div>
+<% } else { %>
+    No posts could be found.
+<% } %>
+ 
+<div class="previous"> 
+<h2>Previous articles</h2>	
+<% for (var j = 1; j < latest_posts.length; j++) { %>
+    <h3><a href="<%= latest_posts[j].uri %>"><%= latest_posts[j].title %></a></h3> 
+    <div class="description"> 
+        Posted <%= (new Date(latest_posts[j].posted)).toLocaleDateString() %>
+    </div>
+<% } %>
+</div>

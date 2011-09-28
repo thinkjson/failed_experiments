@@ -1,0 +1,13 @@
+<h2><%= title %></h2> 
+
+<% for(var i = 0; i < search_results.length; i++) { %>
+    <h3>
+        <a href="<%= mount_point %><%= search_results[i].uri %>">
+        <%= search_results[i].title %></a>
+    </h3>
+    <% if (search_results[i].layout == "post") { %>
+    <div class="description"> 
+        Posted <%= (new Date(search_results[i].posted)).toLocaleDateString() %> 
+    </div>
+    <% } %>
+<% } %>

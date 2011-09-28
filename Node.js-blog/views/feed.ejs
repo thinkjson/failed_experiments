@@ -1,0 +1,23 @@
+<?xml version="1.0"?> 
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"> 
+   <channel> 
+      <title>tiemonster</title> 
+      <link>http://www.tiemonster.info/</link> 
+      <description>Web application developer specializing in scalable web services and elegant user experiences</description> 
+      <language>en-us</language> 
+      <pubDate><%= (new Date()).toUTCString() %></pubDate> 
+      <generator>Node.js</generator> 
+      <managingEditor>rss@tiemonster.info (RSS Feed)</managingEditor> 
+      <webMaster>rss@tiemonster.info (RSS Feed)</webMaster>
+      <atom:link href="http://www.tiemonster.info/feed/" rel="self" type="application/rss+xml" />
+      <% for (var j = 0; j < latest_posts.length; j++) { %>
+      <item> 
+         <title><%= latest_posts[j].title %></title> 
+         <link>http://www.tiemonster.info<%= latest_posts[j].uri %></link> 
+         <description><%= latest_posts[j].excerpt %></description>
+         <pubDate><%= (new Date(latest_posts[j].posted)).toUTCString() %></pubDate> 
+         <guid>http://www.tiemonster.info<%= latest_posts[j].uri %></guid> 
+      </item>
+      <% } %>
+  </channel>
+</rss>

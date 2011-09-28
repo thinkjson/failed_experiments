@@ -1,0 +1,99 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]><html lang="en" class="no-js ie6"><![endif]-->
+<!--[if (gt IE 6)|!(IE)]><!--><html lang="en" class="no-js"><!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <title><%= title %> | Mark Cahill</title> 
+    <link href='/css/styles.css' rel='stylesheet' type='text/css' /> 
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.thinkjson.com/feed/" /> 
+</head> 
+ 
+<body> 
+ 
+<div id="container">
+
+    <div id="nav">
+        <a href="/contact">Contact me</a>
+        <a href="/open-source">Open Source</a>
+        <a href="/downloads/resume.pdf">Résumé</a>
+    </div>
+ 
+    <div id="logo">
+        <h1><a href="/">Mark Cahill on scaling, web services, and UX</a></h1>
+    </div> 
+    
+    <div id="search">
+        <form method="get" action="/search/"> 
+        Search <input type="text" name="search" value=""/> 
+        </form>
+    </div>
+    
+    <div id="content"> 
+        <% if (body) { %> 
+            <%- body %>
+        <% } %>
+    </div> 
+ 
+    <div id="sidebar"> 
+        <div> 
+            <h3>About Mark Cahill</h3>
+            <p><img src="/images/portrait.jpg" alt="Me" class="portrait" />
+                I am a web application developer working at a small private 
+                university, and finishing a second Bachelor's degree in computer science. 
+                I'm on the UI team for Saiku, an open source analysis tool, and an
+                active member of the open source community.</p>
+            
+            <p>I am passionate about scalable web services and elegant user interfaces,
+                and feel that the web provides a unique opportunity to change the way 
+                we think about software and the way we interact with it.</p>
+            
+            <p>The best place to find me is on freenode in ##saiku 
+                between 8am and 4:30pm EST M-F. You can also find me on
+                <a href="http://twitter.com/thinkjson">Twitter</a>, 
+                <a href="https://github.com/inbox/new/thinkjson">shoot
+                me a message on Github</a>, or use my 
+                <a href="/contact">Contact form</a>.</p> 
+        </div> 
+    
+        <div> 
+        	<a href="http://twitter.com/<%= twitter_name %>" class="twitter"><img src="/images/twitter.png" style="border: 0;" alt="follow me" /></a>
+            <h3 class="twitter_updates">Twitter updates</h3>
+            <% if (twitter) { %>
+            <% for (var i = 0; i < twitter.length; i++) { %>
+                <p><%= twitter[i].text %><br />
+                <a href="http://twitter.com/<%= twitter_name %>/status/<%= twitter[i].id %>"><%= (new Date(twitter[i].created_at)).toLocaleDateString() %></a></p>
+            <% } %> 
+            <% } %> 
+        </div> 
+        
+        <div style="clear:both;"></div> 
+    </div>      
+</div>
+
+<!-- Remote jQuery with local fallback; taken from HTML5 Boilerplate http://html5boilerplate.com -->
+<!-- jQuery version might not be the latest; check jquery.com -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script>!window.jQuery && document.write(unescape('%3Cscript src="/js/jquery-1.4.4.min.js"%3E%3C/script%3E'))</script>
+
+<!-- Below is your script file, which has a basic JavaScript design pattern that you can optionally use -->
+<!-- Keep this and plugin scripts at the bottom for faster page load; combining and minifying scripts is recommended -->
+<script src="/js/general.js"></script>
+
+<!-- asynchronous analytics code by Mathias Bynens; change UA-XXXXX-X to your own code; http://mathiasbynens.be/notes/async-analytics-snippet -->
+<!-- this can also be placed in the <head> if you want page views to be tracked quicker -->
+<script>
+if (location.hostname == "www.thinkjson.com") {
+    var _gaq = [['_setAccount', 'UA-17520717-1'], ['_trackPageview']];
+    (function(d, t) {
+        var g = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        g.async = true;
+        g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g, s);
+    })(document, 'script');
+}
+</script>
+</body> 
+</html> 

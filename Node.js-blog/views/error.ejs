@@ -1,0 +1,6 @@
+<h2><%= title %></h2> 
+<% if (status == 500) { %>
+There was an error retrieving this page. Please let me know on the <a href="/contact">contact</a> page.
+<% } %><% if (status == 404) { %>
+The page you requested could not be found. Please let me know on the <a href="/contact">contact</a> page.
+<% } %>
