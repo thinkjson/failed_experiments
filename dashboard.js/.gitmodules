@@ -1,0 +1,3 @@
+[submodule "now"]
+	path = now
+	url = https://github.com/Flotype/now.git

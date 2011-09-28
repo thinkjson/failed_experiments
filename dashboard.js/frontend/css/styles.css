@@ -1,0 +1,7 @@
+* { font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; }
+h1 { padding: 5px; margin: 0; float: left; line-height: 32px; color: #333; text-shadow: 1px 1px 4px #ccc; }
+.clear { clear: both; }
+.information { font-size: 10px; padding: 5px; padding-top: 22px; color: #333; }
+.widget { width: 350px; float: left; background: #eee; margin: 5px; padding: 5px; font-size: 12px; box-shadow: 2px 2px 8px #ccc; -moz-box-shadow: 2px 2px 8px #ccc; -webkit-box-shadow: 2px 2px 8px #ccc;}
+.widget .heading { font-size: 16px; }
+.add { font-size: 30px; color: #333; text-shadow: 1px 1px 4px #ccc; width: 30px; }
